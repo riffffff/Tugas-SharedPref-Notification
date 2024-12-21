@@ -5,12 +5,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_data"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-<!--    untuk menampilkan daftar item dalam bentuk grid atau list-->
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

@@ -10,4 +10,3 @@ data class Dogs(
     @SerializedName("status")
     val status: String,
 )
-//ini untuk mendefinisikan apasaja yang akan diambil
