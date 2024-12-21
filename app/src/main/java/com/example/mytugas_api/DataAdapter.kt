@@ -7,10 +7,12 @@ import com.bumptech.glide.Glide
 import com.example.mytugas_api.databinding.ItemPictureBinding
 
 typealias OnClickData = (String) -> Unit
+typealias OnFavoriteClick = (String) -> Unit
 
 class DataAdapter(
-    private var listDogs: List<String>, // Daftar URL gambar anjing
-    private val OnClickData: OnClickData // Fungsi klik untuk item
+    private var listDogs: List<String>,
+    private val onClickData: OnClickData,
+    private val onFavoriteClick: OnFavoriteClick
 ) : RecyclerView.Adapter<DataAdapter.ItemDataViewHolder>() {
 
     inner class ItemDataViewHolder(private val binding: ItemPictureBinding) :
@@ -18,9 +20,12 @@ class DataAdapter(
 
         fun bind(imageUrl: String) {
             with(binding) {
-                Glide.with(itemView.context).load(imageUrl).into(imgView) // Memuat gambar dengan Glide
-                itemView.setOnClickListener {
-                    OnClickData(imageUrl) // Panggil fungsi klik dengan URL gambar
+                Glide.with(itemView.context).load(imageUrl).into(imgView)
+                imgView.setOnClickListener {
+                    onClickData(imageUrl)
+                }
+                favoriteButton.setOnClickListener {
+                    onFavoriteClick(imageUrl)
                 }
             }
         }
@@ -34,6 +39,6 @@ class DataAdapter(
     override fun getItemCount(): Int = listDogs.size
 
     override fun onBindViewHolder(holder: ItemDataViewHolder, position: Int) {
-        holder.bind(listDogs[position]) // Mengikat URL gambar ke ViewHolder
+        holder.bind(listDogs[position])
     }
 }

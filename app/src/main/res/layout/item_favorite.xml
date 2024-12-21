@@ -12,9 +12,9 @@
         android:scaleType="centerCrop"/>
 
     <Button
-        android:id="@+id/favoriteButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/deleteFavoriteButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="Add to Favorite" />
+        android:text="Delete" />
 </LinearLayout>
