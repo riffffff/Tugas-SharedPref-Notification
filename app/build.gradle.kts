@@ -41,7 +41,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -57,5 +56,9 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.androidx.room.runtime)
     kapt(libs.androidx.room.compiler)
+    implementation("androidx.core:core:1.8.0")
+    implementation("androidx.core:core-ktx:1.8.0")
+    implementation("androidx.preference:preference-ktx:1.2.0")
+    implementation("androidx.core:core:1.12.0")
 
 }
